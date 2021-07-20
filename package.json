@@ -1,0 +1,26 @@
+{
+  "name": "36-clon-telegram-con-nodejs",
+  "version": "0.1.0",
+  "description": "Un chat como telegram pero mucho mejor :)",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/samueldazadaza/clon-telegram-con-nodejs.git"
+  },
+  "keywords": [
+    "chat",
+    "telegram",
+    "server",
+    "nodejs",
+    "backend"
+  ],
+  "author": "Samuel Daza <samueldazadaza@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/samueldazadaza/clon-telegram-con-nodejs/issues"
+  },
+  "homepage": "https://github.com/samueldazadaza/clon-telegram-con-nodejs#readme"
+}
