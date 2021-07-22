@@ -1,5 +1,8 @@
 const express = require('express');
 const bodyParser = require('body-parser')
+
+const response = require('./network/response');
+
 const router = express.Router();
 
 var app = express();
@@ -11,13 +14,17 @@ router.get('/message', function (req, res) {
     res.header({
         "custom-header": "nuestro valor personalizado", //cabecera personalizada
     });
-    res.send('Lista de mensajes');
+    response.success(req, res, 'lista de mensajes1');
 });
 
 router.post('/message', function (req, res) {
     console.log(req.query);
-    console.log(req.body);
-    res.status(201).send( [{error: '', body:'Creado corrrectamente'}]);
+    if (req.query.error == "ok") {
+        response.error(req, res, 'error simulado', 401);
+    } else {
+        response.success(req, res, 'creado correctamente', 201);
+    }
+   // res.status(201).send( [{error: '', body:'Creado corrrectamente'}]);
 });
 
 //hacer get en postman: http://localhost:3000/message?ordeBy=id&age=15
