@@ -9,15 +9,15 @@ app.use(router);
 router.get('/message', function (req, res) {
     console.log(req.headers);
     res.header({
-        "custom-header": "nuestro valor personalizado",
+        "custom-header": "nuestro valor personalizado", //cabecera personalizada
     });
     res.send('Lista de mensajes');
 });
 
-router.delete('/message', function (req, res) {
+router.post('/message', function (req, res) {
     console.log(req.query);
     console.log(req.body);
-    res.send('Mensaje: **' + req.body.text +  '** añadido correctamente');
+    res.status(201).send( [{error: '', body:'Creado corrrectamente'}]);
 });
 
 //hacer get en postman: http://localhost:3000/message?ordeBy=id&age=15
